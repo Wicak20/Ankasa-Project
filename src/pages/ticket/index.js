@@ -40,16 +40,15 @@ export default function Ticket({ formattedData, error }) {
   const router = useRouter();
   const [sliderValue, setsliderValue] = useState([100, 2000]);
   const validateFacilities = (data) => {
-
     return (
       <div className="flex flex-row items-center sm:gap-1">
-        {data.map(item => {
+        {data.map((item, index) => {
           if (item === 'meal') {
-            return <MdLunchDining size={24} />
+            return <MdLunchDining key={index} size={24} />
           } else if (item === 'baggage') {
-            return <MdLuggage size={24} />
+            return <MdLuggage key={index} size={24} />
           } else if (item === 'wifi') {
-            return <MdWifi size={24} />
+            return <MdWifi key={index} size={24} />
           } else {
             return null
           }
